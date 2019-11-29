@@ -1,0 +1,184 @@
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1024px:   Tablet landscape
+1024px+ is where normal styles apply
+
+$breakpoint argument choices:
+- phone
+- tab-port
+- tab-land
+
+1em = 16px
+*/
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-5rem); }
+  80% {
+    transform: translateX(1rem); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(5rem); }
+  80% {
+    transform: translateX(-1rem); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(5rem); }
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; }
+  @media only screen and (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+
+a {
+  text-decoration: none; }
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #2c3e50; }
+
+.heading-primary {
+  line-height: 1; }
+  .heading-primary--main {
+    display: block;
+    font-family: 'Oswald', sans-serif;
+    font-size: 6rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+    animation: moveInLeft 1s ease-out .3s;
+    animation-fill-mode: backwards; }
+    @media only screen and (max-width: 64em) {
+      .heading-primary--main {
+        font-size: 5rem; } }
+  .heading-primary--sub {
+    display: block;
+    text-align: center;
+    color: #95a5a6;
+    font-size: 2rem;
+    font-weight: 400;
+    animation: moveInRight 1s ease-out .3s;
+    animation-fill-mode: backwards; }
+
+.u-margin-bottom-big {
+  margin-bottom: 8rem; }
+  @media only screen and (max-width: 56.25em) {
+    .u-margin-bottom-big {
+      margin-bottom: 5rem; } }
+
+.u-margin-bottom-small {
+  margin-bottom: 3rem; }
+  @media only screen and (max-width: 56.25em) {
+    .u-margin-bottom-small {
+      margin-bottom: 1.5rem; } }
+
+.box {
+  display: flex;
+  max-width: 100rem;
+  height: 40rem;
+  background-color: #ecf0f1;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.2);
+  animation: fadeIn 1s ease-out; }
+  @media only screen and (max-width: 56.25em) {
+    .box {
+      max-width: 80rem;
+      height: 33rem; } }
+  @media only screen and (max-width: 48em) {
+    .box {
+      flex-direction: column; } }
+  @media only screen and (max-width: 48em) {
+    .box {
+      max-width: 50rem;
+      height: auto;
+      box-shadow: none; } }
+  .box__left {
+    flex: 0 0 40%;
+    overflow: hidden; }
+    @media only screen and (max-width: 56.25em) {
+      .box__left {
+        display: flex;
+        justify-content: center; } }
+    @media only screen and (max-width: 48em) {
+      .box__left {
+        max-height: 40rem; } }
+  .box__photo {
+    min-height: 40rem;
+    object-fit: cover;
+    object-position: top; }
+    @media only screen and (max-width: 48em) {
+      .box__photo {
+        width: 100%; } }
+  .box__right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 60%;
+    padding: 4rem; }
+  .box__text-box {
+    text-align: center; }
+
+.contacts {
+  display: flex; }
+  .contacts--animated {
+    animation: moveInBottom 0.5s ease-out .3s;
+    animation-fill-mode: backwards; }
+  .contacts > * {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 6rem;
+    height: 6rem;
+    fill: #2c3e50;
+    transition: all .3s; }
+  .contacts__email:hover {
+    background-color: #7f8c8d;
+    fill: #fff; }
+  .contacts__linkedin:hover {
+    background-color: #2867B2;
+    fill: #fff; }
+  .contacts__linkedin .contacts__icon {
+    margin-bottom: 5px; }
+  .contacts__icon {
+    width: 3.5rem;
+    height: 3.5rem; }
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  height: 100vh; }
+  @media only screen and (max-width: 48em) {
+    .main {
+      align-items: flex-start; } }

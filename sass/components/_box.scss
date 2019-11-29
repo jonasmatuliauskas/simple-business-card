@@ -1,0 +1,61 @@
+.box {
+    display: flex;
+    max-width: 100rem;
+    height: 40rem;
+    background-color: $color-clouds;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.2);
+
+    animation: fadeIn 1s ease-out;
+
+    @include respond(tab-port) {
+        max-width: 80rem;
+        height: 33rem;
+    }
+
+    @include respond(phone) {
+        flex-direction: column;
+    }
+
+    @include respond(phone) {
+        max-width: 50rem;
+        height: auto;
+        box-shadow: none;
+    }
+
+    &__left {
+        flex: 0 0 40%;
+        overflow: hidden;
+
+        @include respond(tab-port) {
+            display: flex;
+            justify-content: center;
+        }
+
+        @include respond(phone) {
+            max-height: 40rem;
+        }
+    }
+
+    &__photo {
+        min-height: 40rem;
+        object-fit:cover;
+        object-position: top;
+
+        @include respond(phone) {
+            width: 100%;
+        }
+    }
+
+    &__right {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex: 0 0 60%;
+        padding: 4rem;
+    }
+
+    &__text-box {
+        text-align: center;
+    }
+}
