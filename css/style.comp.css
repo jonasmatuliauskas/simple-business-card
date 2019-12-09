@@ -167,6 +167,9 @@ body {
   .contacts__linkedin:hover {
     background-color: #2867B2;
     fill: #fff; }
+  .contacts__github:hover {
+    background-color: #6e5494;
+    fill: #fff; }
   .contacts__linkedin .contacts__icon {
     margin-bottom: 5px; }
   .contacts__icon {

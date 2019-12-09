@@ -26,6 +26,11 @@
         fill: $color-white;
     }
     
+    &__github:hover {
+        background-color: $color-primary-github;
+        fill: $color-white;
+    }
+    
     &__linkedin &__icon {
         margin-bottom: 5px;
     }
